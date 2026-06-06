@@ -1,19 +1,27 @@
-op=input("Enter a operation: ")
-operations = '+-*/'
-if op in operations:
-    num1=int(input("enter a num1: "))
-    num2=int(input("enter a num2: "))
-    
-    if op=='+':
-            print(num1+num2)
-    elif op=='-':
-            print(num1-num2)
-    elif op=='*':
-            print(num1*num2)
-    elif op=='/':
-        if num2==0:
-            print("The denominator cant be zero")
-        else:
-            print(num1/num2)
+def add(num1,num2):
+    return num1+num2
+def sub(num1,num2):
+    return num1-num2
+def mul(num1,num2):
+    return num1*num2
+def div(num1,num2):
+    if num2==0:
+        return "The denominator cant be zero"
+    else:
+        return num1/num2
+
+operation=input("Enter the operation to be performed:")
+if operation in '+-*/':
+    num1= int(input("Enter the first number:"))
+    num2 = int(input("Enter the second number:"))
+
+    if operation=='+':
+        print(add(num1,num2))
+    elif operation=='-':
+        print(sub(num1,num2))
+    elif operation=='*':
+        print(mul(num1,num2))
+    elif operation=='/':
+        print(div(num1,num2))
 else:
-    print("Invalid")
+    print("Operation Invalid")
